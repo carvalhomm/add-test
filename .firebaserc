@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "add-test-5b638",
+    "targets": {
+      "add-test-5b638": {
+        "hosting": {
+          "add-test-5b638": [
+            "add-test-5b638"
+          ]
+        }
+      }
+    }
+  }
+}
