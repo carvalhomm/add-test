@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.routes';
 import { AppComponent } from './app.component';
+import { ComicsListModule } from './comics-list/comics-list.module';
+import { CharactersListModule } from './characters-list/characters-list.module'
 
 @NgModule({
   declarations: [
@@ -10,7 +12,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ComicsListModule,
+    CharactersListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

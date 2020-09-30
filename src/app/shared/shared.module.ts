@@ -10,10 +10,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTabsModule } from '@angular/material/tabs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { TopHeaderComponent } from './top-header/top-header.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [TopHeaderComponent],
   imports: [
     CommonModule,
     MatFormFieldModule,

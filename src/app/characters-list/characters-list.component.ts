@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-characters-list',
+  selector: 'add-characters-list',
   templateUrl: './characters-list.component.html',
   styleUrls: ['./characters-list.component.scss']
 })
