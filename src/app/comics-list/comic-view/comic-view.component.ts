@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'add-comic-view',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComicViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(MAT_DIALOG_DATA) private data, private matRef: MatDialogRef<ComicViewComponent>) { }
 
   ngOnInit(): void {
+  }
+
+  public closeDialog() {
+    this.matRef.close(true);
   }
 
 }

@@ -11,7 +11,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TopHeaderComponent } from './top-header/top-header.component';
-
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 @NgModule({
   declarations: [TopHeaderComponent],
@@ -35,7 +35,11 @@ import { TopHeaderComponent } from './top-header/top-header.component';
     MatProgressSpinnerModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TopHeaderComponent
+  ],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
   ]
 })
 export class SharedModule { }

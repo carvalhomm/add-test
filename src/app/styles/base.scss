@@ -1,0 +1,78 @@
+@import './variables.scss';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  background: #f9f9f9;
+  color: #fff;
+  // overflow-y: hidden;
+}
+
+button:focus {
+  outline: none;
+}
+
+.primary-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  opacity: 0.9;
+  transition: opacity .25s ease-in-out;
+  box-shadow: $box-shadow;
+  background-color: $theme;
+  border: none;
+  border-radius: 5px;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  color: $dark;
+  letter-spacing: .8px;
+  outline: 0;
+  padding: 10px 15px 10px 15px;
+  cursor: pointer;
+  &:hover {
+    transition: opacity .25s ease-in-out;
+    opacity: 1;
+  }
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .list-container {
+    display: flex;
+    flex-wrap: wrap;
+    .list-item {
+      display: flex;
+      flex-direction: column;
+      box-shadow: $box-shadow;
+      transition: box-shadow 0.5s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        transition: box-shadow 0.5s ease-in-out;
+        box-shadow: $box-shadow-hover;
+      }
+    }
+  }
+}

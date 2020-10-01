@@ -1,1 +1,17 @@
-<p>comics-list works!</p>
+<add-top-header></add-top-header>
+<div class="page-container">
+  <form [formGroup]="formGroup">
+    <mat-form-field class="search-bar">
+      <mat-label><mat-icon>search</mat-icon>Pesquisar</mat-label>
+      <input matInput formControlName="search">
+    </mat-form-field>
+  </form>
+  <div class="list-container">
+    <div *ngFor="let item of listItems" class="list-item" (click)="openDetails(item)">
+      <img [src]="null">
+      <div class="box-info">
+        <span class="title">Titulo</span>
+      </div>
+    </div>
+  </div>
+</div>
