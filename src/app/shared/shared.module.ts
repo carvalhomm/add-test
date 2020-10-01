@@ -5,9 +5,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
-import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatTabsModule } from '@angular/material/tabs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TopHeaderComponent } from './top-header/top-header.component';
@@ -24,6 +23,8 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     MatProgressSpinnerModule,
     FormsModule,
     ReactiveFormsModule,
+    MatButtonModule,
+    MatCardModule,
     HttpClientModule
   ],
   exports: [
@@ -34,8 +35,10 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     MatIconModule,
     MatProgressSpinnerModule,
     FormsModule,
+    MatButtonModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatCardModule,
     TopHeaderComponent
   ],
   providers: [

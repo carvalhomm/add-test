@@ -54,21 +54,60 @@ button:focus {
 .page-container {
   display: flex;
   flex-direction: column;
+  padding: 2px;
   form {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    mat-form-field {
+      width: 100%;
+      padding: 0px 10%;
+      color: $dark;
+    }
+  }
+  .loading-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    .loading-list {
+      width: 120px !important;
+      height: 40px !important;
+      animation: none !important;
+      ::ng-deep svg {
+        height: 40px !important;
+        position: unset;
+        transform: none;
+      }
+    }
   }
   .list-container {
     display: flex;
     flex-wrap: wrap;
     .list-item {
-      display: flex;
-      flex-direction: column;
-      box-shadow: $box-shadow;
-      transition: box-shadow 0.5s ease-in-out;
+      width: 600px;
       cursor: pointer;
+      img {
+        width: 100%;
+        height: auto;
+        margin-left: 1%;
+        // @media screen and (max-width: 400px) {
+        //   height: 400px;
+        // }
+      }
+      mat-card-title {
+        max-width: 100%;
+      }
+      mat-card-content {
+        max-width: 100%;
+      }
+      // display: flex;
+      // flex-direction: column;
+      // box-shadow: $box-shadow;
+      // transition: box-shadow 0.5s ease-in-out;
+      // cursor: pointer;
       &:hover {
         transition: box-shadow 0.5s ease-in-out;
         box-shadow: $box-shadow-hover;

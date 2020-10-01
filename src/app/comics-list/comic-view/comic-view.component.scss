@@ -1,0 +1,12 @@
+@import '../../styles/variables.scss';
+
+.character-item {
+  list-style: none;
+  cursor: pointer;
+  color: $dark;
+  transition: color 0.5s ease-in-out;
+  &:hover {
+    color: $theme;
+    transition: color 0.5s ease-in-out;
+  }
+}

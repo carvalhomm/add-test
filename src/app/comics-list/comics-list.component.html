@@ -6,12 +6,23 @@
       <input matInput formControlName="search">
     </mat-form-field>
   </form>
+  <div *ngIf="loading" class="loading-container">
+    <mat-progress-spinner class="loading-list" mode="indeterminate" [color]="'accent'"></mat-progress-spinner>
+  </div>
   <div class="list-container">
-    <div *ngFor="let item of listItems" class="list-item" (click)="openDetails(item)">
-      <img [src]="null">
-      <div class="box-info">
-        <span class="title">Titulo</span>
-      </div>
-    </div>
+    <div *ngIf="!loading && listItems.length === 0">Sem resultados para exibir</div>
+    <mat-card *ngFor="let item of listItems" class="list-item" (click)="openDetails(item)">
+      <mat-card-header>
+        <!-- <div mat-card-avatar></div> -->
+        <mat-card-title>{{ item.title }}</mat-card-title>
+        <mat-card-subtitle>${{ item.prices[0]?.price }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="item.images[0]?.path + '.' + item.images[0]?.extension" [alt]="item.title">
+      <mat-card-content>
+        <p>
+          {{ item.description ? item.description : 'Sem descrição' }}
+        </p>
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>
