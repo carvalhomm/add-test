@@ -1,5 +1,29 @@
 # AddTest
 
+Projeto de teste para Integração com APIs da Marvel.
+
+    Observação: A API da Marvel está em fase Beta.
+
+## API Marvel
+
+As APIs Marvel são todas requisições GET, que são autenticadas passando uma chave `apikey` na query da consulta.
+Mais informações podem ser acessadas no link [documentação iterativa](https://developer.marvel.com/docs#!/public/getCreatorCollection_get_0)
+Foram usados duas APIs principais:
+
+### Comics
+
+    https://gateway.marvel.com:443/v1/public/comics
+
+API de consulta dos quadrinhos de todo o universo Marvel. A estrutura do objeto de retorno pode ser consultado em [entidades](https://developer.marvel.com/documentation/entity_types)
+
+### Characters
+
+    https://gateway.marvel.com:443/v1/public/comics
+
+API de consulta para todos os personagens da Marvel. A estrutura do objeto de retorno pode ser consultado em [entidades](https://developer.marvel.com/documentation/entity_types)
+
+As duas APIs consumidas acimas possuem relações entre si. Por exemplo a API de `Comics` retorna os personagens que aparecem na estória, assim como o endpoint associado. O mesmo vale para a API de `Characters`, que retorna os quadrinhos nos quais o personagem aparece.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
 
 ## Development server

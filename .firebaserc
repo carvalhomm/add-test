@@ -1,13 +1,13 @@
 {
   "projects": {
-    "default": "add-test-5b638",
-    "targets": {
-      "add-test-5b638": {
-        "hosting": {
-          "add-test-5b638": [
-            "add-test-5b638"
-          ]
-        }
+    "default": "marvel-api-consumer"
+  },
+  "targets": {
+    "marvel-api-consumer": {
+      "hosting": {
+        "marvel-api-consumer": [
+          "marvel-api-consumer"
+        ]
       }
     }
   }

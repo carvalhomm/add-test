@@ -1,7 +1,7 @@
 {
   "hosting": {
     "public": "dist/add-test",
-    "target": "add-test",
+    "target": "marvel-api-consumer",
     "ignore": [
       "firebase.json",
       "**/.*",
