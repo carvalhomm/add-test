@@ -1,1 +1,18 @@
-<p>character-view works!</p>
+<h2 mat-dialog-title>{{ data.name }}</h2>
+<mat-dialog-content>
+  <h3>Descrição:</h3>
+  <p>{{ data.description ? data.description : 'Sem descrição' }}</p>
+
+  <h3>Quadrinhos:</h3>
+  <ng-container *ngIf="data.comics.items && data.comics.items.length > 0">
+    <ul>
+      <li class="comic-item" *ngFor="let comic of data.comics.items" (click)="openComicDetails(comic.resourceURI)">{{ comic.name }}</li>
+    </ul>
+  </ng-container>
+  <ng-container *ngIf="!data.comics.items || data.comics.items.length === 0">
+    <p>Sem personagens para exibir</p>
+  </ng-container>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Fechar</button>
+</mat-dialog-actions>

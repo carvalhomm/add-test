@@ -1,2 +1,27 @@
 <add-top-header></add-top-header>
-<p>characters-list works!</p>
+<div class="page-container">
+  <form [formGroup]="formGroup">
+    <mat-form-field class="search-bar">
+      <mat-label><mat-icon>search</mat-icon>Pesquisar</mat-label>
+      <input matInput formControlName="search">
+    </mat-form-field>
+  </form>
+  <div *ngIf="loading" class="loading-container">
+    <mat-progress-spinner class="loading-list" mode="indeterminate" [color]="'accent'"></mat-progress-spinner>
+  </div>
+  <div class="list-container">
+    <div *ngIf="!loading && listItems.length === 0">Sem resultados para exibir</div>
+    <mat-card *ngFor="let item of listItems" class="list-item" (click)="openDetails(item)">
+      <mat-card-header>
+        <img class="character-avatar" mat-card-avatar [src]="item.thumbnail.path + '.' + item.thumbnail.extension">
+        <mat-card-title>{{ item.name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          {{ item.description ? item.description : 'Sem descrição' }}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+

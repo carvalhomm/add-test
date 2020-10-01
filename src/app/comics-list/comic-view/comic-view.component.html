@@ -15,7 +15,7 @@
   <h3>Personagens:</h3>
   <ng-container *ngIf="data.characters.items && data.characters.items.length > 0">
     <ul>
-      <li class="character-item" *ngFor="let character of data.characters.items" (click)="openCharacterDetails(character.resourceURI)">{{ character.name }}</li>
+      <li class="character-item" *ngFor="let character of data.characters.items" (click)="openCharacterDetails(character.name)">{{ character.name }}</li>
     </ul>
   </ng-container>
   <ng-container *ngIf="!data.characters.items || data.characters.items.length === 0">

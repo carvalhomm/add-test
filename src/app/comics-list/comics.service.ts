@@ -11,16 +11,15 @@ import { MarvelResultModel } from '../models/MarvelResultModel.interface';
 export class ComicsService {
   private loading = false;
   constructor(private httpClient: HttpClient) {}
-  public callComicsApi(titleStartsWith: string, offset: number, limit: number, orderBy: string): Promise<ApiResultModel> {
+  public callComicsApi(titleStartsWith: string, offset: number, limit: number, orderBy: string, id?: string): Promise<ApiResultModel> {
     if (this.loading) { return Promise.resolve(null); }
     const apikey = MARVEL_PUBLIC_KEY;
     this.loading = true;
-    return this.httpClient.get(MARVEL_API + 'comics' + encodeURI({titleStartsWith, offset, limit, apikey, orderBy})).toPromise().then(
-    (comics: MarvelResultModel) => {
+    return this.httpClient.get(MARVEL_API + 'comics' + encodeURI({titleStartsWith, offset, limit, apikey,
+      orderBy, id})).toPromise().then((comics: MarvelResultModel) => {
       this.loading = false;
-      console.log('API RESULT --> ', comics);
       if (comics.code === 200) {
-        return { mode: limit === 10 ? 'initial' as 'initial' : 'aggregate' as 'aggregate', data: comics.data.results};
+        return { mode: offset === 0 ? 'initial' as 'initial' : 'aggregate' as 'aggregate', data: comics.data.results};
       } else {
         return { error: true };
       }

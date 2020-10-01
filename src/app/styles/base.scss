@@ -86,10 +86,14 @@ button:focus {
   .list-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     .list-item {
+      margin-bottom: 20px;
+      margin-right: 10px;
       width: 600px;
       cursor: pointer;
-      img {
+      // character-avatar
+      .magazine-cover {
         width: 100%;
         height: auto;
         margin-left: 1%;

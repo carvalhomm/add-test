@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Comic } from 'src/app/models/Comic.interface';
 
 @Component({
@@ -9,7 +10,7 @@ import { Comic } from 'src/app/models/Comic.interface';
 })
 export class ComicViewComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: Comic, private matRef: MatDialogRef<ComicViewComponent>) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: Comic, private matRef: MatDialogRef<ComicViewComponent>, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -19,8 +20,9 @@ export class ComicViewComponent implements OnInit {
     return new Date(data.date).toLocaleDateString('pt-Br');
   }
 
-  public openCharacterDetails(resourceUri: string) {
-    console.log('resource --> ', resourceUri);
+  public openCharacterDetails(name: string) {
+    this.router.navigate(['characters'], { state: { characterName: name }});
+    this.closeDialog();
   }
 
   public closeDialog() {
