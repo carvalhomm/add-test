@@ -12,7 +12,6 @@ export class TopHeaderComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    console.log(location.href);
     this.isComicsCurrentUrl = location.href.includes('/comics');
     this.isCharactersCurrentUrl = location.href.includes('/characters');
   }

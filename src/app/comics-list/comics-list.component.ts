@@ -38,7 +38,6 @@ onWindowScroll() {
   ngOnInit(): void {
     this.initFormGroup();
     this.routeParam = history.state.comicResourceUri;
-    console.log('histry --> ', history.state);
     if (this.routeParam) {
       this.keepListUpdated(this.routeParam);
     } else {
@@ -87,7 +86,6 @@ onWindowScroll() {
 
   private keepListUpdated(comicResourceUri?: string) {
     this.comicsService.callComicsApi(this.search, this.offSet, this.limit, 'title', comicResourceUri).then(comics => {
-      console.log('value API --> ', comics);
       if (!comics) { return; }
       if (comics.error) { return; }
       if (comics.mode === 'initial') {

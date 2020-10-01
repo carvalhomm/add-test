@@ -1,4 +1,4 @@
-import { ParametersUri } from "../models/ParametersUri.interface";
+import { ParametersUri } from '../models/ParametersUri.interface';
 
 export function encodeURI(params: ParametersUri): string {
   let textEncoded = '?';
@@ -8,6 +8,5 @@ export function encodeURI(params: ParametersUri): string {
       textEncoded += keys[i] + '=' + params[keys[i]] + (i === keys.length - 1 ? ''  : '&');
     }
   }
-  console.log('encoded url --> ', textEncoded);
   return textEncoded.length > 3 ? textEncoded : '';
 }
